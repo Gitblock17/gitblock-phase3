@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gitblock-phase3"
+version = "0.1.0"
+description = "GitBlock Phase 3 — Decentralized Node Network for free AI inference"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "GitBlock"}]
+keywords = ["ai", "inference", "decentralized", "gpu", "web3", "openai"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "httpx>=0.25.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+    "websockets>=12.0",
+]
+
+[project.optional-dependencies]
+node = ["llama-cpp-python>=0.2.0", "torch>=2.0.0"]
+dev = ["pytest>=7.0", "pytest-asyncio>=0.21"]
+
+[project.scripts]
+gitblock-node = "node.server:main"
+
+[project.urls]
+Homepage = "https://gitblock.org"
+Repository = "https://github.com/Gitblock17/gitblock-phase3"
+Documentation = "https://gitblock.org/usage"
